@@ -16,7 +16,7 @@ Program sederhana berbasis Python yang menerapkan konsep dasar Object-Oriented P
 1. Pastikan Python sudah terinstal di komputer/laptop kamu.
 2. Clone repository ini:
    ```bash
-   git clone [https://github.com/bilqisananda07/nama-repository.git](https://github.com/bilqisananda07/nama-repository.git)
+   git clone [https://github.com/bilqisananda07/tugas-pbo-python.git](https://github.com/bilqisananda07/tugas-pbo-python.git)
 3. Jalankan file warung.py:
 
 python warung.py
