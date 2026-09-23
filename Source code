@@ -1,0 +1,67 @@
+class BarangWarung:
+
+    def __init__(self, nama, harga, stok):
+        self.nama = nama
+        # Atribut Private (Enkapsulasi)
+        self.__harga = harga
+        self.__stok = stok
+
+    # --- GETTER ---
+    def get_harga(self):
+        """Getter untuk mengambil nilai harga"""
+        return self.__harga
+
+    def get_stok(self):
+        """Getter untuk mengambil nilai stok"""
+        return self.__stok
+
+    # --- SETTER ---
+    def set_harga(self, harga_baru):
+        """Setter untuk mengubah harga dengan validasi (harga > 0)"""
+        if harga_baru > 0:
+            self.__harga = harga_baru
+            print(
+                f"[BERHASIL] Harga {self.nama} diperbarui menjadi Rp{self.__harga}"
+            )
+        else:
+            print(
+                f"[GAGAL] Input tidak valid! Harga harus lebih besar dari 0."
+            )
+
+    def set_stok(self, stok_baru):
+        """Setter untuk mengubah stok dengan validasi (stok >= 0)"""
+        if stok_baru >= 0:
+            self.__stok = stok_baru
+            print(f"[BERHASIL] Stok {self.nama} diperbarui menjadi {self.__stok}")
+        else:
+            print(
+                f"[GAGAL] Input tidak valid! Stok tidak boleh negatif ({stok_baru})."
+            )
+
+
+# ==========================================
+# UJI COBA PROGRAM / TESTING Terminal VS Code
+# ==========================================
+print("=== PROGRAM MANAJEMEN WARUNG ===\n")
+
+# Inisialisasi objek barang
+item1 = BarangWarung("Beras 1kg", 14000, 10)
+
+print(f"Barang: {item1.nama}")
+print(f"Harga Awal: Rp{item1.get_harga()}")
+print(f"Stok Awal : {item1.get_stok()}")
+print("-" * 40)
+
+# KONDISI 1: INPUT DATA VALID
+print("\n--- 1. Uji Coba Input Data Valid ---")
+item1.set_harga(15000)
+item1.set_stok(15)
+
+# KONDISI 2: INPUT DATA TIDAK VALID
+print("\n--- 2. Uji Coba Input Data Tidak Valid ---")
+item1.set_harga(-5000)  # Menyetel harga negatif
+item1.set_stok(-3)  # Menyetel stok negatif
+
+print("-" * 40)
+print(f"Harga Akhir: Rp{item1.get_harga()}")
+print(f"Stok Akhir : {item1.get_stok()}")
